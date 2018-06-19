@@ -1,10 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
-const fromPairs = require('lodash/fromPairs')
 const AssetsPlugin = require('assets-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const dev = Boolean(process.env.WEBPACK_SERVE)
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 function getEnv() {
@@ -22,8 +20,7 @@ module.exports = {
     packages: [
       'react',
       'react-dom',
-      'react-router',
-      'antd'
+      'react-router'
     ]
   },
   output: {
