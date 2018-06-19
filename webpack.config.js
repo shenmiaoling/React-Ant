@@ -10,7 +10,7 @@ function getEnv() {
 }
 
 function ifDev(resolve,reject) {
-  return getEnv() == 'development' ?
+  return getEnv() === 'development' ?
   resolve : reject
 }
 
