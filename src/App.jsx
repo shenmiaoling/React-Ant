@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { withRouter } from 'react-router'
+import Main from '../routes'
+class App extends Component {
 
-module.exports = withRouter(React.createClass({
-  render(){
-    return <div className='app'>
-      {this.props.children && React.cloneElement(this.props.children, {router: this.props.router})}
-    </div>
-  }
-}))
+    render() {
+        return (
+            <div className="my-home">aaasssaaa</div>
+        )
+    }
+}
+export default withRouter(App);

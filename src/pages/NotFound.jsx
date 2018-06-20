@@ -1,9 +1,9 @@
-import React from 'react'
+import React,{ Component, Fragment } from 'react'
 
-module.exports = React.createClass({
-  render(){
-    return <div className='pages-404'>
-      <h4>404 Pages Not Found.</h4>
-    </div>
+export default class Home extends Component {
+  render() {
+    return <Fragment>
+      <h4>NOT FOUND</h4>
+    </Fragment>
   }
-})
+}
