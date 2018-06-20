@@ -6,6 +6,4 @@ import App from "./src/App";
 const routes = require('./routes')
 
 
-ReactDOM.render((<HashRouter>
-    <App />
-  </HashRouter>), document.getElementById("app"));
+ReactDOM.render(routes(), document.getElementById("app"));
