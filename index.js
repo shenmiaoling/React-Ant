@@ -1,9 +1,8 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter } from 'react-router-dom'
-import App from "./src/App";
-const routes = require('./routes')
+import { Router, browserHistory } from 'react-router'
+import routes from './routes'
 
 
-ReactDOM.render(routes(), document.getElementById("app"));
+ReactDOM.render(<Router history={browserHistory} routes={routes}/>, document.getElementById("app"));

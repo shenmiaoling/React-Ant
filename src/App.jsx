@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router'
-import Main from '../routes'
-class App extends Component {
+
+export default class App extends Component {
 
     render() {
         return (
-            <div>aaasssaaa</div>
+            <div>
+              {this.props.children}
+              aaasssaaa
+            </div>
         )
     }
 }
-export default withRouter(App);

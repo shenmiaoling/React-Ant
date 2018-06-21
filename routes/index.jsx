@@ -1,24 +1,20 @@
 import React,{ Component } from 'react'
-import { browserHistory, Router, Route } from 'react-router'
+import { Router, Route } from 'react-router'
 import App from '../src/App'
 import Home from '../src/pages/Home'
 import NotFound from '../src/pages/NotFound'
 
-module.exports = () => {
-  return <Router history={browserHistory} routes={[
-    {
-      path: '/',
-      component: App,
-      indexRoute:{
-        component: Home
-      },
-      childRoutes: [
-        {}
-      ]
+export default [
+  {
+    path: '/',
+    component: App,
+    indexRoute:{
+      component: () => <div>123123</div>
     },
-    {
-      path: '*',
-      component: NotFound
-    }
-  ]}></Router>
-}
+    childRoutes: []
+  },
+  {
+    path: '*',
+    component: NotFound
+  }
+]
