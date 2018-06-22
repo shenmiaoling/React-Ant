@@ -9,7 +9,7 @@ export default [
     path: '/',
     component: App,
     indexRoute:{
-      component: () => <div>123123</div>
+      component: Home
     },
     childRoutes: []
   },
