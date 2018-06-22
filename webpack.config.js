@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
 const AssetsPlugin = require('assets-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 function getEnv() {
   return process.env.NODE_ENV || 'development'
