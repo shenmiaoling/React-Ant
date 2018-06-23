@@ -43,8 +43,8 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                                minimize: true
-                            }
+                          minimize: true
+                      }
             },
             {
               loader: 'postcss-loader',
