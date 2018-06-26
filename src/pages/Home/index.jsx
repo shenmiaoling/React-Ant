@@ -9,7 +9,7 @@ export default class Home extends Component {
       <Button>Default</Button>
       <Button type="dashed">Dashed</Button>
       <Button type="danger">Danger</Button>
-      <h4 class="title">ssssssssshome</h4>
+      <h4 className="title">ssssssssshome</h4>
     </Fragment>
   }
 }

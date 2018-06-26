@@ -8,34 +8,27 @@ function getEnv() {
   return process.env.NODE_ENV || 'development'
 }
 
-function ifDev(resolve,reject) {
-  return getEnv() === 'development' ?
-  resolve : reject
+function ifDev(resolve, reject) {
+  return getEnv() === 'development'
+    ? resolve
+    : reject
 }
 
 module.exports = {
   entry: {
     index: '.',
-    packages: [
-      'react',
-      'react-dom',
-      'react-router'
-    ]
+    packages: ['react', 'react-dom', 'react-router']
   },
   output: {
     path: path.join(__dirname, 'assets'),
-    filename: ifDev('application.js','application-[hash].js')
+    filename: ifDev('application.js', 'application-[hash].js')
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader'
-        })
-      },
-      {
+        use: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader'})
+      }, {
         test: /\.styl$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
@@ -43,36 +36,31 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                          minimize: true
-                      }
-            },
-            {
+                minimize: true
+              }
+            }, {
               loader: 'postcss-loader',
               options: {
                 sourceMap: true,
-                plugins: [
-                  autoprefixer({
-                    browsers: ['last 2 versions']
-                  })
-                ]
+                plugins: [autoprefixer({browsers: ['last 2 versions']})]
               }
-            },
-            {
+            }, {
               loader: 'stylus-loader'
             }
           ]
         })
-      },
-      {
-        test: /\.jsx?$/,
+      }, {
+        test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
+        exclude: /node_modules/,
+        options: {
+          cacheDirectory: true,
+          plugins: ['react-hot-loader/babel']
+        }
+      }, {
         test: /\.(jpe?g|png|svg|gif)$/,
         loader: 'file-loader'
-      },
-      {
+      }, {
         test: /\.(.woff2?|eot|ttf)$/,
         loader: 'url-loader?limit=1024'
       }
@@ -80,20 +68,18 @@ module.exports = {
   },
   plugins: [
     new AssetsPlugin({
-      path: path.join(__dirname,'assets')
+      path: path.join(__dirname, 'assets')
     }),
     new ExtractTextPlugin({
-      filename: ifDev('application.css','application-[hash].css')
+      filename: ifDev('application.css', 'application-[hash].css')
     }),
-    new webpack.EnvironmentPlugin({
-      NODE_ENV: 'development'
-    }),
+    new webpack.EnvironmentPlugin({NODE_ENV: 'development'}),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'packages',
-      filename: ifDev('packages.js','packages-[hash].js')
+      filename: ifDev('packages.js', 'packages-[hash].js')
     })
-  ].concat(ifDev([],[new webpack.optimize.UglifyJsPlugin()])),
+  ].concat(ifDev([], [new webpack.optimize.UglifyJsPlugin()])),
   resolve: {
-    extensions: ['.js','.jsx','.css','.styl','.json']
+    extensions: ['.js', '.jsx', '.css', '.styl', '.json']
   }
 }
