@@ -11,7 +11,7 @@ export default class Sidebar extends Component {
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
         <Menu.Item key="1">
           <Icon type="user"/>
-          <span>学校首dddff</span>
+          <span>ddd</span>
         </Menu.Item>
         <Menu.Item key="2">
           <Icon type="video-camera"/>

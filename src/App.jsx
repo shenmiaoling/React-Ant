@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Layout, Menu, Icon, Dropdown} from 'antd';
 const {Header, Sider, Content} = Layout;
 import Topbar from './components/Topbar'
-import Sidebar from './components/sideBar'
+import Sidebar from './components/Sidebar'
 import {hot} from 'react-hot-loader'
 
 class App extends Component {
@@ -20,14 +20,16 @@ class App extends Component {
       }}>
       <Sidebar collapsed={this.state.collapsed}/>
       <Layout>
-        <Header style={{
+        {/* <Header style={{
             background: '#fff',
             padding: 0
           }}>
           <Icon className="trigger" type={this.state.collapsed
               ? 'menu-unfold'
               : 'menu-fold'} onClick={this.toggle}/>
-        </Header>
+        </Header> */
+        }
+        <Topbar toggle={this.toggle}/>
         <Content style={{
             margin: '24px 16px',
             padding: 24,

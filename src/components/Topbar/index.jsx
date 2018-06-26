@@ -40,14 +40,12 @@ export default class Topbar extends Component {
       <Icon className="trigger" type={this.props.collapsed
           ? 'menu-unfold'
           : 'menu-fold'} onClick={this.props.toggle}/>
-      <Menu mode="horizontal" className="logOut" onClick={this.clear}>
-        <SubMenu title={<span> < Icon type = "user" /> 永固 < /span>}>
-          <Menu.Item key="logOut">
-            <Link to="/login">退出</Link>
-          </Menu.Item>
+      <Menu >
+        <Menu.Item>菜单项</Menu.Item>
+        <SubMenu title="子菜单">
+          <Menu.Item>子菜单项</Menu.Item>
         </SubMenu>
       </Menu>
-      <Icon className="screenFull" type="arrows-alt" onClick={this.screenFull}/>
     </Header>)
   }
 }
