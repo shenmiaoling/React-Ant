@@ -16,19 +16,10 @@ class App extends Component {
   }
   render() {
     return (<Layout style={{
-        height: "100vh"
+        minHeight: "100vh"
       }}>
       <Sidebar collapsed={this.state.collapsed}/>
       <Layout>
-        {/* <Header style={{
-            background: '#fff',
-            padding: 0
-          }}>
-          <Icon className="trigger" type={this.state.collapsed
-              ? 'menu-unfold'
-              : 'menu-fold'} onClick={this.toggle}/>
-        </Header> */
-        }
         <Topbar toggle={this.toggle}/>
         <Content style={{
             margin: '24px 16px',

@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Router, Route} from 'react-router'
 import App from '../src/App'
 import Home from '../src/pages/Home'
+import Login from '../src/pages/Login'
 import NotFound from '../src/pages/NotFound'
 
 export default[
@@ -13,7 +14,10 @@ export default[
     },
     childRoutes: []
   }, {
-    path : '*',
+    path: 'login',
+    component: Login
+  }, {
+    path: '*',
     component: NotFound
   }
 ]
